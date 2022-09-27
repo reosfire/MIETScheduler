@@ -6,7 +6,7 @@ namespace MIETAPI.Orioks.Models.Schedule
 {
     public class Day : IEnumerable<Subject>
     {
-        private readonly Dictionary<int, List<Subject>> _subjects = new Dictionary<int, List<Subject>>();
+        private readonly SortedDictionary<int, List<Subject>> _subjects = new SortedDictionary<int, List<Subject>>();
 
         public Day(IEnumerable<Subject> subjects)
         {
