@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
 using MIETAPI.Orioks.Models;
+using MIETAPI.Orioks.Models.Schedule;
 
 namespace MIETAPI.Orioks
 {
@@ -109,9 +110,8 @@ namespace MIETAPI.Orioks
             CheckToken();
             
             JsonElement responseJson = await GetJson($"/api/v1/schedule/groups/{groupId}");
-            
-            Console.WriteLine(responseJson);
-            return null;
+
+            return new Schedule(responseJson);
         }
     }
 }
