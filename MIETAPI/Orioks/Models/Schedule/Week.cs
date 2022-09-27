@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 namespace MIETAPI.Orioks.Models.Schedule
 {
-    public class Week
+    public readonly struct Week
     {
-        private Day[] _days = new Day[7];
+        private readonly Day[] _days;
         public Week(IEnumerable<Subject> subjects)
         {
+            _days = new Day[7];
+            
             List<Subject>[] daySubjects = new List<Subject>[7];
             for (int i = 0; i < 7; i++)
             {
